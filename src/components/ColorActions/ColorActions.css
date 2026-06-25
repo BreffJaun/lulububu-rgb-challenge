@@ -1,0 +1,95 @@
+.color-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.color-actions__values {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.color-actions__value-row,
+.color-actions__form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.color-actions__label,
+.color-actions__name-label {
+  width: 48px;
+  font-weight: 700;
+}
+
+.color-actions__code,
+.color-actions__input,
+.color-actions__button,
+.color-actions__save-button {
+  height: 44px;
+}
+
+.color-actions__code {
+  display: flex;
+  align-items: center;
+
+  width: 190px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  font-family: monospace;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.color-actions__input {
+  flex: 1;
+  padding: 0 12px;
+  border: 1px solid #999;
+  border-radius: 8px;
+
+  font: inherit;
+}
+
+.color-actions__button,
+.color-actions__save-button {
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    transform 0.12s ease,
+    background-color 0.12s ease,
+    box-shadow 0.12s ease;
+}
+
+.color-actions__button {
+  width: 110px;
+  background-color: #e8e8e8;
+  color: #222;
+}
+
+.color-actions__button:hover {
+  background-color: #dedede;
+}
+
+.color-actions__save-button {
+  background-color: #111;
+  color: #fff;
+}
+
+.color-actions__save-button:hover {
+  background-color: #000;
+}
+
+.color-actions__button:active,
+.color-actions__save-button:active {
+  transform: translateY(1px) scale(0.98);
+}

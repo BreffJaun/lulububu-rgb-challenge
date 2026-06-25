@@ -1,13 +1,14 @@
 import { useState } from "react";
 import ColorSlider from "./components/ColorSlider/ColorSlider";
 import ColorPreview from "./components/ColorPreview/ColorPreview";
+import ColorActions from "./components/ColorActions/ColorActions.jsx";
 import SavedColors from "./components/SavedColors/SavedColors";
 
 function App() {
   const [color, setColor] = useState({
-    r: 132,
-    g: 129,
-    b: 116,
+    r: 31,
+    g: 149,
+    b: 255,
   });
 
   return (
@@ -19,6 +20,8 @@ function App() {
 
         <ColorPreview color={color} />
       </section>
+
+      <ColorActions color={color} />
 
       <SavedColors />
     </main>
