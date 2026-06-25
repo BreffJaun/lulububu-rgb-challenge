@@ -49,6 +49,7 @@
 .saved-colors__delete-button,
 .saved-colors__button {
   height: 40px;
+  flex-shrink: 0;
   font-weight: 600;
 }
 
@@ -65,6 +66,7 @@
   width: 110px;
   background-color: #e8e8e8;
   color: #222;
+  white-space: nowrap;
 }
 
 .saved-colors__button:hover {
@@ -74,6 +76,7 @@
 .saved-colors__select-button {
   display: flex;
   flex: 1;
+  min-width: 0;
   align-items: center;
   gap: 12px;
 
@@ -104,11 +107,48 @@
 .saved-colors__info {
   display: flex;
   flex: 1;
+  min-width: 0;
   flex-direction: column;
   gap: 4px;
+}
+
+.saved-colors__info strong,
+.saved-colors__info span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .saved-colors__info span {
   font-family: monospace;
   color: #666;
+}
+
+@media (max-width: 768px) {
+  .saved-colors__item {
+    flex-wrap: wrap;
+  }
+
+  .saved-colors__select-button {
+    flex: 1 1 calc(100% - 56px);
+    min-width: 0;
+  }
+
+  .saved-colors__button {
+    flex: 1 1 100%;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .saved-colors__item {
+    align-items: flex-start;
+  }
+
+  .saved-colors__delete-button,
+  .saved-colors__preview {
+    width: 40px;
+    height: 40px;
+  }
 }
