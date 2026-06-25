@@ -1,12 +1,8 @@
-import { useState } from "react";
-
 import "./ColorActions.css";
 
-const ColorActions = ({ color }) => {
-  const [colorName, setColorName] = useState("");
-
+const ColorActions = ({ color, colorName, setColorName, onSaveColor }) => {
+  // const [colorName, setColorName] = useState("");
   const rgbValue = `rgb(${color.r}, ${color.g}, ${color.b})`;
-
   const toHex = (value) => {
     return value.toString(16).padStart(2, "0").toUpperCase();
   };
@@ -22,11 +18,12 @@ const ColorActions = ({ color }) => {
   };
 
   const handleSave = () => {
-    console.log({
-      name: colorName,
-      ...color,
-      hex: hexValue,
-    });
+    if (colorName.trim() === "") {
+      return;
+    }
+
+    onSaveColor(colorName.trim());
+    setColorName("");
   };
 
   return (
@@ -76,7 +73,7 @@ const ColorActions = ({ color }) => {
           type="button"
           onClick={handleSave}
         >
-          Speichern
+          Save Color
         </button>
       </form>
     </section>

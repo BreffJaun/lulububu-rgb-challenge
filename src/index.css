@@ -37,4 +37,5 @@ body {
   justify-content: space-between;
   gap: 48px;
   margin-bottom: 24px;
+  /* border: 1px solid red; */
 }

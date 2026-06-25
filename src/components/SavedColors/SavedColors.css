@@ -12,3 +12,103 @@
   color: #777;
   font-style: italic;
 }
+
+.saved-colors__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+}
+
+.saved-colors__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  background-color: #fff;
+}
+
+.saved-colors__delete-button,
+.saved-colors__button,
+.saved-colors__select-button {
+  border: none;
+  border-radius: 8px;
+
+  font: inherit;
+  cursor: pointer;
+
+  transition:
+    transform 0.12s ease,
+    background-color 0.12s ease;
+}
+
+.saved-colors__delete-button,
+.saved-colors__button {
+  height: 40px;
+  font-weight: 600;
+}
+
+.saved-colors__delete-button {
+  width: 44px;
+  background-color: #ffecec;
+}
+
+.saved-colors__delete-button:hover {
+  background-color: #ffd6d6;
+}
+
+.saved-colors__button {
+  width: 110px;
+  background-color: #e8e8e8;
+  color: #222;
+}
+
+.saved-colors__button:hover {
+  background-color: #dedede;
+}
+
+.saved-colors__select-button {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0;
+  background-color: transparent;
+  text-align: left;
+}
+
+.saved-colors__select-button:hover {
+  background-color: #f5f5f5;
+}
+
+.saved-colors__delete-button:active,
+.saved-colors__button:active,
+.saved-colors__select-button:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.saved-colors__preview {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+
+  border: 1px solid #999;
+  border-radius: 8px;
+}
+
+.saved-colors__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.saved-colors__info span {
+  font-family: monospace;
+  color: #666;
+}
