@@ -1,0 +1,38 @@
+.color-slider {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.color-slider__row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.color-slider__label {
+  width: 24px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.color-slider__row .rc-slider {
+  flex: 1;
+  min-width: 220px;
+}
+
+.color-slider__value {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 72px;
+  min-height: 40px;
+  border: 1px solid #999;
+  border-radius: 8px;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #fff;
+}

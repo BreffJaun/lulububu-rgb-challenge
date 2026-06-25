@@ -1,0 +1,25 @@
+.color-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.color-preview__box {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+}
+
+/* .color-preview__values {
+  display: grid;
+  justify-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.color-preview__rgb,
+.color-preview__hex {
+  font-weight: 600;
+} */

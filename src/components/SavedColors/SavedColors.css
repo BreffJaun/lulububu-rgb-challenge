@@ -1,0 +1,14 @@
+.saved-colors {
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #ddd;
+}
+
+.saved-colors h2 {
+  margin-bottom: 16px;
+}
+
+.saved-colors__empty {
+  color: #777;
+  font-style: italic;
+}
