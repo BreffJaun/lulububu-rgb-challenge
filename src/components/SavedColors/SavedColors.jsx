@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./SavedColors.css";
 
 const SavedColors = ({ colors, onDeleteColor, onSelectColor }) => {
-  const [copiedValue, setCopiedValue] = useState("");
+  const [copiedValue, setCopiedValue] = useState(null);
 
   const toHex = (value) => {
     return Number(value).toString(16).padStart(2, "0").toUpperCase();
@@ -15,7 +15,7 @@ const SavedColors = ({ colors, onDeleteColor, onSelectColor }) => {
       setCopiedValue(type);
 
       setTimeout(() => {
-        setCopiedValue("");
+        setCopiedValue(null);
       }, 1200);
     } catch (error) {
       console.error("Could not copy color value:", error);
@@ -73,17 +73,17 @@ const SavedColors = ({ colors, onDeleteColor, onSelectColor }) => {
               <button
                 className="saved-colors__button"
                 type="button"
-                onClick={() => handleCopy("rgb", rgbValue)}
+                onClick={() => handleCopy(`${color.id}-rgb`, rgbValue)}
               >
-                {copiedValue === "rgb" ? "RGB copied" : "Copy RGB"}
+                {copiedValue === `${color.id}-rgb` ? "RGB copied" : "Copy RGB"}
               </button>
 
               <button
                 className="saved-colors__button"
                 type="button"
-                onClick={() => handleCopy("hex", hexValue)}
+                onClick={() => handleCopy(`${color.id}-hex`, hexValue)}
               >
-                {copiedValue === "hex" ? "HEX copied" : "Copy HEX"}
+                {copiedValue === `${color.id}-hex` ? "HEX copied" : "Copy HEX"}
               </button>
             </li>
           );

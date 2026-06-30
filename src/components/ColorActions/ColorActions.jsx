@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import "./ColorActions.css";
 
 const ColorActions = ({ color, colorName, setColorName, onSaveColor }) => {
@@ -9,9 +11,12 @@ const ColorActions = ({ color, colorName, setColorName, onSaveColor }) => {
 
   const hexValue = `#${toHex(color.r)}${toHex(color.g)}${toHex(color.b)}`;
 
+  const [feedback, setFeedback] = useState("");
+
   const handleCopy = async (value) => {
     try {
       await navigator.clipboard.writeText(value);
+      showFeedback(value === rgbValue ? "rgb" : "hex");
     } catch (error) {
       console.error("Could not copy color value:", error);
     }
@@ -24,6 +29,15 @@ const ColorActions = ({ color, colorName, setColorName, onSaveColor }) => {
 
     onSaveColor(colorName.trim());
     setColorName("");
+    showFeedback("saved");
+  };
+
+  const showFeedback = (value) => {
+    setFeedback(value);
+
+    setTimeout(() => {
+      setFeedback("");
+    }, 1200);
   };
 
   return (
@@ -37,7 +51,7 @@ const ColorActions = ({ color, colorName, setColorName, onSaveColor }) => {
             type="button"
             onClick={() => handleCopy(rgbValue)}
           >
-            Copy RGB
+            {feedback === "rgb" ? "RGB copied" : "Copy RGB"}
           </button>
         </div>
 
@@ -49,7 +63,7 @@ const ColorActions = ({ color, colorName, setColorName, onSaveColor }) => {
             type="button"
             onClick={() => handleCopy(hexValue)}
           >
-            Copy HEX
+            {feedback === "hex" ? "HEX copied" : "Copy HEX"}
           </button>
         </div>
       </div>
@@ -73,7 +87,7 @@ const ColorActions = ({ color, colorName, setColorName, onSaveColor }) => {
           type="button"
           onClick={handleSave}
         >
-          Save Color
+          {feedback === "saved" ? "Saved" : "Save Color"}
         </button>
       </form>
     </section>
